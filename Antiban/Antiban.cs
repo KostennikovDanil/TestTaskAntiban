@@ -64,18 +64,8 @@ namespace Antiban
 
                     }
                     if (Messages[i].Phone != Messages[j].Phone)
-                    {
                         preResult.SentDateTime = CheckBySeconds(diff, preResult, 10);
-                        if(diff >= 10)
-                        {
-                            if(result.Count > j + 1)
-                            {
-                                diff = preResult.SentDateTime.Subtract(result[j + 1].SentDateTime).TotalSeconds;
-                                if (diff > 10 && diff >= 0)
-                                    preResult.SentDateTime = result[j].SentDateTime.AddSeconds(10);
-                            }
-                        }
-                    }
+
                     if (j == result.Count - 1)
                     {
                         result.Add(preResult);
